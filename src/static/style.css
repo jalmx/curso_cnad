@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "segment";
+    src: local("segment_font.woff"),
+    url("./segment_font.woff");
+}
+
+.digit{
+    font-family: "segment",sans-serifs;
+}
+
+.size1{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.size2{
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+
+.icon-size{
+    font-size: 8rem;
+}
+
+.off{
+    color: #ddd;
+}
+
+.red{
+    color: red;
+}
+
+.yellow{
+    color:yellow
+}
+
+.green{
+    color: green;
+}
