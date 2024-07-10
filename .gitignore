@@ -163,3 +163,4 @@ cython_debug/
 
 data.db
 repo_curso_cnad.egg-info
+src/config.py

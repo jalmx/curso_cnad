@@ -10,14 +10,11 @@ setup(
         'pyFirmata2==2.5.0',
         'setuptools==70.3.0',
     ],
-    scripts=[
-        'src',
-    ],
     packages=[
         'src',
         'src.helpers',
         'src.model',
         'src.hardware',
     ],
-    package_dir={"": "src"},
+   
 )

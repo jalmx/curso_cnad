@@ -1,10 +1,10 @@
 from peewee import *
 from datetime import datetime
 from dotenv import dotenv_values
+from src.config import path_env
 
-name_db = config = dotenv_values("../.env").get("DATABASE")
+name_db = dotenv_values(path_env).get("DATABASE")
 
-print(f"dir db: {name_db}")
 
 db = SqliteDatabase(
     name_db,

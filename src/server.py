@@ -10,14 +10,15 @@ app = Flask(__name__)
 def home():
     helper = HelperServer()
     if request.method == "GET":
-
-        if request.args.get("key"):
-            key = request.args.get("key")
-            value = request.args.get("value")
+        key = request.args.get("key")
+        value = request.args.get("value")
+        
+        if key and value:
             print(f"value to insert => key:{key} - value= {value}")
             helper.insert_data(
                 {"key": request.args.get("key"), "value": request.args.get("value")}
             )
+        
     data = helper.get_data()
     return render_template("index.jinja", data={"data": data})
 

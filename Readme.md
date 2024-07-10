@@ -8,7 +8,7 @@
 
 1. Crate a virtual env
 2. install dependencies with `pip install -r requirements.txt`
-3. Exec script `init_env.py`, this create
+3. Exec script `init_env.py`, this create file `.env` and create file `src/config.py` for db path
 4. Exec script `start_apps.sh`
 
 ## For developer

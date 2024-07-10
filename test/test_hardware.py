@@ -6,4 +6,4 @@ if __name__ == "__main__":
 
     arduino = Board(port=port)
     arduino.init()
-    arduino.loop_main(False)
+    arduino.loop_main()
