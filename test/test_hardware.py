@@ -1,4 +1,4 @@
-from src.hardware.connection import Board
+from src.hardware.board import Board
 
 
 if __name__ == "__main__":

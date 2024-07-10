@@ -1,8 +1,8 @@
-from model.controller import ManageData
-from model.model import Data
+from src.model.controller import ManageData
+from src.model.model import Data
 
 
-class HelperServer:
+class HelperDBParse:
     _db = ManageData()
 
     def _data_base_dict(self):
@@ -38,13 +38,20 @@ class HelperServer:
             modify_by=data_dict["modify_by"],
         )
 
-    def insert_data(self, data_fronted: dict):
+    def insert_data_fronted(self, data_fronted: dict):
         data_base = self._data_base_dict()
         new_data = self._change_data( data_base, data_fronted)
         print(f"data like dict from fronted: {new_data}")
         
         data_to_insert = self._dict_to_data(new_data)
         self._db.insert_data(data_to_insert)
+    
+    
+    def insert_data_board(self, data: dict):
+        print(f"data like dict from board: {data}")
+        data_to_insert = self._dict_to_data(data)
+        self._db.insert_data(data_to_insert)
+
 
     def get_data(self):
         return self._db.get_last_data()

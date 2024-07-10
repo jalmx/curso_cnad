@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 
-from helpers.helper_server import HelperServer
+from helpers.helper_server import HelperDBParse
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/*")
 def home():
-    helper = HelperServer()
+    helper = HelperDBParse()
     if request.method == "GET":
         key = request.args.get("key")
         value = request.args.get("value")
@@ -16,7 +16,7 @@ def home():
         if key and value:
             value = int(value)
             print(f"value to insert => key:{key} - value= {value}")
-            helper.insert_data({"key": key, "value": value})
+            helper.insert_data_fronted({"key": key, "value": value})
 
     data = helper.get_data()
     print(data)

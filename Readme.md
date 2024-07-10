@@ -3,8 +3,9 @@
 ## Arquitectura de propuesta de proyecto 
 ![arq](assets/Arquitectura_curso_cnad.excalidraw.png)
 
-# Steps to start
+![video](./assets/video.gif)
 
+## Steps to start
 
 1. Crate a virtual env
 2. install dependencies with `pip install -r requirements.txt`
