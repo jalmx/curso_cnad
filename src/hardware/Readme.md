@@ -1,10 +1,14 @@
 # Hardware
 
-Here to connect to Arduino Uno Board with the firmware firmata, with this to communicate to a database to insert the data 
+Here to connect to Arduino Uno Board with the firmware `firmata`, with this to communicate to a database to insert the data 
 
-## How to start
+## Architecture
 
-![arq](assets/arq.png)
+![arq](assets/arq_hardware.excalidraw.png)
+
+## Schematic
+
+<!--  TODO: agregar diagrama esquematico de las conexiones ! -->
 
 ## Module
 
