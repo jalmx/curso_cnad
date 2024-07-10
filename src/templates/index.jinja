@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="5;URL=/">
+  <meta http-equiv="refresh" content="10;URL=/">
 
   <link rel="apple-touch-icon" sizes="57x57" href="{{url_for('static', filename='/icon/apple-icon-57x57.png') }}">
   <link rel="apple-touch-icon" sizes="60x60" href="{{url_for('static', filename='/icon/apple-icon-60x60.png') }}">
@@ -15,7 +15,8 @@
   <link rel="apple-touch-icon" sizes="144x144" href="{{url_for('static', filename='/icon/apple-icon-144x144.png') }}">
   <link rel="apple-touch-icon" sizes="152x152" href="{{url_for('static', filename='/icon/apple-icon-152x152.png') }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='/icon/apple-icon-180x180.png') }}">
-  <link rel="icon" type="image/png" sizes="192x192"  href="{{url_for('static', filename='/icon/android-icon-192x192.png') }}">
+  <link rel="icon" type="image/png" sizes="192x192"
+    href="{{url_for('static', filename='/icon/android-icon-192x192.png') }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='/icon/favicon-32x32.png') }}">
   <link rel="icon" type="image/png" sizes="96x96" href="{{url_for('static', filename='/icon/favicon-96x96.png') }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='/icon/favicon-16x16.png') }}">
@@ -35,101 +36,116 @@
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Dashboard de Control</a>
+      <sub>{{ data.data.id }}</sub>
     </div>
   </nav>
   <main class="container">
     <div class="row row-cols-1 row-cols-md-3">
 
-
       {% if data %}
-      
-        {% for element in data %}
-        
-            <div class="col">
-              <div class="card">
-                <div class="card-img-top text-center py-2">
-                  <i class="bi bi-lightbulb-fill icon-size off"></i>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center digit size2">Led 1</h5>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">On</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-        
-        {% endfor %}
-
-      {% endif %}
 
       <div class="col">
         <div class="card">
           <div class="card-img-top text-center py-2">
-            <i class="bi bi-lightbulb-fill icon-size off"></i>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-center digit size2">Led 1</h5>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">On</label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col">
-        <div class="card">
-          <div class="card-img-top text-center py-2">
-            <i class="bi bi-lightbulb-fill icon-size off"></i>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-center digit size2">Led 1</h5>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">On</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-img-top text-center py-2">
-            <i class="bi bi-toggles icon-size"></i>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-center digit size2">Botón 1</h5>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">On</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-img-top text-center py-2">
-            <span class="icon-size digit green">43.56</span>
+            <span data-element="sensor_1" class="icon-size digit green">{{ data.data.sensor_1 }} </span>
           </div>
           <div class="card-body">
             <h5 class="card-title text-center digit size2">Sensor 1</h5>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">On</label>
+            <div>
+              <span class="badge text-bg-info">sensor</span>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="col">
+        <div class="card">
+          <div class="card-img-top text-center py-2">
+            <span data-element="sensor_2" class="icon-size digit green">{{data.data.sensor_2}} </span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center digit size2">Sensor 2</h5>
+            <div>
+              <span class="badge text-bg-info">sensor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card" id="led_1">
+          <div class="card-img-top text-center py-2">
+            <i data-element="led_1"
+              class="bi {{'bi-lightbulb-fill' if data.data.led_1 else 'bi-lightbulb' }}  {{'on' if data.data.led_1 else 'off' }} icon-size "></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center digit size2">Led 1</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" data-value="{{'1' if data.data.led_1 else '0' }}" type="checkbox"
+                role="switch" id="led_1_check" {{'checked' if data.data.led_1 else '' }} data-element="led_1">
+              <label class="form-check-label" for="led_1_check">On</label>
+              <span class="badge text-bg-warning">output</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card" id="led_2">
+          <div class="card-img-top text-center py-2">
+            <i data-element="led_2"
+              class="bi {{'bi-lightbulb-fill' if data.data.led_2 else 'bi-lightbulb' }}  {{'on' if data.data.led_2 else 'off' }} icon-size "></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center digit size2">Led 2</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" data-value="{{'1' if data.data.led_2 else '0' }}" type="checkbox"
+                data-element="led_2" role="switch" id="led_2_check" {{'checked' if data.data.led_2 else '' }}>
+              <label class="form-check-label" for="led_2_check">On</label>
+              <span class="badge text-bg-warning">output</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card" id="btn_1">
+          <div class="card-img-top text-center py-2">
+            <i data-element="btn_1" class="bi bi-toggles icon-size "></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center digit size2">Botón 1</h5>
+            <div class="">
+              <span class="badge text-bg-danger">toggle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card" id="btn_2">
+          <div class="card-img-top text-center py-2">
+            <i data-element="btn_2" class="bi bi-toggles icon-size "></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center digit size2">Botón 2</h5>
+            <div class="">
+              <span class="badge text-bg-danger">toggle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% else %}
+      <p>Sin información</p>
+      {% endif %}
     </div>
   </main>
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 
 </html>

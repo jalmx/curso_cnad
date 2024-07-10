@@ -12,14 +12,14 @@ def home():
     if request.method == "GET":
         key = request.args.get("key")
         value = request.args.get("value")
-        
+
         if key and value:
+            value = int(value)
             print(f"value to insert => key:{key} - value= {value}")
-            helper.insert_data(
-                {"key": request.args.get("key"), "value": request.args.get("value")}
-            )
-        
+            helper.insert_data({"key": key, "value": value})
+
     data = helper.get_data()
+    print(data)
     return render_template("index.jinja", data={"data": data})
 
 

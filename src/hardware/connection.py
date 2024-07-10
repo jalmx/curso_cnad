@@ -18,7 +18,7 @@ class Board:
         self.btn_1.enable_reporting()
         self.btn_2.enable_reporting()
 
-    def _define_input(self):
+    def _define_input(self): 
         self.btn_1 = self.board.get_pin(f"d:{self._BTN_1}:i")
         self.btn_2 = self.board.get_pin(f"d:{self._BTN_2}:i")
 

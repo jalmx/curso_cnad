@@ -7,12 +7,12 @@ def inset_random():
 
     db = ManageData()
     new_data = Data(
-        sensor_1=random.random() * 100,
-        sensor_2=random.random() * 100,
-        btn_1=random.choice([True, False]),
-        btn_2=random.choice([True, False]),
-        led_1=random.choice([True, False]),
-        led_2=random.choice([True, False]),
+        sensor_1=float(str(random.random() * 100)[0:5]),
+        sensor_2=float(str(random.random() * 100)[0:5]),
+        btn_1=random.choice([1, 0]),
+        btn_2=random.choice([1, 0]),
+        led_1=random.choice([1, 0]),
+        led_2=random.choice([1, 0]),
         modify_by=random.choice(["dashboard", "board"]),
     )
 
@@ -31,5 +31,5 @@ def read_data():
 
 if __name__ == "__main__":
 
-    for i in range(10000):
+    for i in range(4):
         inset_random()
