@@ -5,6 +5,9 @@
 
 ![video](./assets/video.gif)
 
+[Ver video](https://raw.githubusercontent.com/jalmx/curso_cnad/master/assets/video.mp4)
+
+
 ## Steps to start
 
 1. Crate a virtual env
