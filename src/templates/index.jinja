@@ -37,6 +37,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Dashboard de Control</a>
       <sub>{{ data.data.id }}</sub>
+      <span class="badge {{ 'text-bg-success' if  data.status  else  'text-bg-danger'}}">{{ 'connected' if  data.status  else  'offline'}}</span>
     </div>
   </nav>
   <main class="container">
