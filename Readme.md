@@ -15,9 +15,11 @@
 
 ![screenshot 2](./assets/dashboard_2.png)
 
-![screenshot 2](./assets/dashboard_3.png)
+![screenshot 3](./assets/dashboard_3.png)
 
-![screenshot 2](./assets/dashboard_4.png)
+![screenshot 4](./assets/dashboard_4.png)
+
+**Final dashboard**
 
 
 ## Steps to start
@@ -35,7 +37,7 @@
 
 ## Firmware
 
-Install in your board the firmware `firmataStandard` in the Arduino IDE. 
+Install in your board the firmware `firmataStandard` using Arduino IDE. 
 Or you can download from here with [bootloader](./src/hardware/assets/firmware/StandardFirmata.ino.with_bootloader.hex) or [without bootloader](./src/hardware/assets/firmware/StandardFirmata.ino.hex)
 
 ## Structure
@@ -43,12 +45,6 @@ Or you can download from here with [bootloader](./src/hardware/assets/firmware/S
 ```bash
 .
 ├── assets
-│   ├── Arquitectura_curso_cnad.excalidraw.excalidraw
-│   ├── Arquitectura_curso_cnad.excalidraw.png
-│   ├── dashboard.png
-│   ├── video.gif
-│   ├── video.mp4
-│   └── video.webm
 ├── clear.sh
 ├── init_env.py
 ├── LICENSE.md
@@ -61,12 +57,10 @@ Or you can download from here with [bootloader](./src/hardware/assets/firmware/S
 │   ├── helpers
 │   ├── __init__.py
 │   ├── __main__.py
-│   ├── model
-│   ├── __pycache__
+│   ├── models
 │   ├── server.py
 │   ├── static
 │   └── templates
-├── start_apps.sh
 └── test
     ├── test_board_db.py
     ├── test_controller.py
