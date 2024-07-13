@@ -7,17 +7,27 @@
 
 [Ver video](https://raw.githubusercontent.com/jalmx/curso_cnad/master/assets/video.mp4)
 
+![video final](./assets/video_final.gif)
+
 ## Screenshot
 
-![](./assets/dashboard.png)
+![screenshot 1](./assets/dashboard.png)
+
+![screenshot 2](./assets/dashboard_2.png)
+
+![screenshot 2](./assets/dashboard_3.png)
+
+![screenshot 2](./assets/dashboard_4.png)
 
 
 ## Steps to start
 
-1. Crate a virtual env
+1. Crate a virtual env, and activate
 2. install dependencies with `pip install -r requirements.txt`
-3. Exec script `init_env.py`, this create file `.env` and create file `src/config.py` for db path
-4. Exec script `start_apps.sh`
+3. Exec script `init_env.py`, this create file `.env` and `src/config.py` for db path
+4. Connect your board to computer with the connections indicated in schematic
+5. Then run the server, `python src/server.py`
+6. Open your browser in [http://localhost:3000](http://localhost:3000), in this moment run the board
 
 ## Schematic
 
@@ -33,32 +43,34 @@ Or you can download from here with [bootloader](./src/hardware/assets/firmware/S
 ```bash
 .
 ├── assets
-│   ├── Arquitectura_curso_cnad.excalidraw.png
-│   ├── video.gif
-│   ├── video.mp4
-│   └── video.webm
+│   ├── Arquitectura_curso_cnad.excalidraw.excalidraw
+│   ├── Arquitectura_curso_cnad.excalidraw.png
+│   ├── dashboard.png
+│   ├── video.gif
+│   ├── video.mp4
+│   └── video.webm
 ├── clear.sh
-├── data.db
 ├── init_env.py
 ├── LICENSE.md
 ├── Readme.md
 ├── requirements.txt
 ├── setup.py
 ├── src
-│   ├── config.py
-│   ├── hardware
-│   ├── helpers
-│   ├── __init__.py
-│   ├── __main__.py
-│   ├── model
-│   ├── server.py
-│   ├── static
-│   └── templates
+│   ├── config.py
+│   ├── hardware
+│   ├── helpers
+│   ├── __init__.py
+│   ├── __main__.py
+│   ├── model
+│   ├── __pycache__
+│   ├── server.py
+│   ├── static
+│   └── templates
 ├── start_apps.sh
-├── test
-│   ├── test_controller.py
-│   └── test_hardware.py
-└── venv
+└── test
+    ├── test_board_db.py
+    ├── test_controller.py
+    └── test_hardware.pys
 ```
 
 ## For developer
@@ -67,5 +79,11 @@ Or you can download from here with [bootloader](./src/hardware/assets/firmware/S
 2. Then, need to exec `pip install -e . ` for to install like module this project
 3. For generate the setup module:
     - Install `pip install setuppy-generator` then exec: ` python -m setuppy_generator > setup.py`
+4. If you want to change the time to reload, modify the template `index.jinja`, in the `<meta http-equiv="refresh" content="1;URL=/">`
 
 More information [https://pypi.org/project/setuppy-generator/](https://pypi.org/project/setuppy-generator/)
+
+### Bugs (features)
+
+- All init off, no read preview data from db, if something have been on
+- The switch in the dashboard have a lang with the server, you have to wait the next reload to see the change

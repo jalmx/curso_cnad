@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="5;URL=/">
+  <meta http-equiv="refresh" content="1;URL=/">
 
   <link rel="apple-touch-icon" sizes="57x57" href="{{url_for('static', filename='/icon/apple-icon-57x57.png') }}">
   <link rel="apple-touch-icon" sizes="60x60" href="{{url_for('static', filename='/icon/apple-icon-60x60.png') }}">
@@ -35,9 +35,8 @@
 <body>
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Dashboard de Control</a>
-      <sub>{{ data.data.id }}</sub>
-      <span class="badge {{ 'text-bg-success' if  data.status  else  'text-bg-danger'}}">{{ 'connected' if  data.status  else  'offline'}}</span>
+      <a class="navbar-brand" href="/">Dashboard Control </a>
+      <span class="badge {{ 'text-bg-success' if  data.status  else  'text-bg-danger'}}">{{ 'connected' if  data.status  else  'offline'}}<sub>  {{ data.data.id }}</sub></span>
     </div>
   </nav>
   <main class="container">
@@ -62,7 +61,7 @@
       <div class="col">
         <div class="card">
           <div class="card-img-top text-center py-2">
-            <span data-element="sensor_2" class="icon-size digit green">{{data.data.sensor_2}} </span>
+            <span data-element="sensor_2" class="icon-size digit red">{{data.data.sensor_2}} </span>
           </div>
           <div class="card-body">
             <h5 class="card-title text-center digit size2">Sensor 2</h5>
@@ -77,7 +76,7 @@
         <div class="card" id="led_1">
           <div class="card-img-top text-center py-2">
             <i data-element="led_1"
-              class="bi {{'bi-lightbulb-fill' if data.data.led_1 else 'bi-lightbulb' }}  {{'on' if data.data.led_1 else 'off' }} icon-size "></i>
+              class="bi {{'bi-lightbulb-fill red' if data.data.led_1 else 'bi-lightbulb' }}  {{'on' if data.data.led_1 else 'off' }} icon-size "></i>
           </div>
           <div class="card-body">
             <h5 class="card-title text-center digit size2">Led 1</h5>
@@ -95,7 +94,7 @@
         <div class="card" id="led_2">
           <div class="card-img-top text-center py-2">
             <i data-element="led_2"
-              class="bi {{'bi-lightbulb-fill' if data.data.led_2 else 'bi-lightbulb' }}  {{'on' if data.data.led_2 else 'off' }} icon-size "></i>
+              class="bi {{'bi-lightbulb-fill yellow' if data.data.led_2 else 'bi-lightbulb' }}  {{'on' if data.data.led_2 else 'off' }} icon-size "></i>
           </div>
           <div class="card-body">
             <h5 class="card-title text-center digit size2">Led 2</h5>
@@ -112,10 +111,10 @@
       <div class="col">
         <div class="card" id="btn_1">
           <div class="card-img-top text-center py-2">
-            <i data-element="btn_1" class="bi bi-toggles icon-size "></i>
+            <i data-element="btn_1" class="bi bi-toggles red icon-size "></i>
           </div>
           <div class="card-body">
-            <h5 class="card-title text-center digit size2">Botón 1</h5>
+            <h5 class="card-title text-center digit size2">Button 1</h5>
             <div class="">
               <span class="badge text-bg-danger">toggle</span>
             </div>
@@ -126,10 +125,10 @@
       <div class="col">
         <div class="card" id="btn_2">
           <div class="card-img-top text-center py-2">
-            <i data-element="btn_2" class="bi bi-toggles icon-size "></i>
+            <i data-element="btn_2" class="bi bi-toggles icon-size yellow "></i>
           </div>
           <div class="card-body">
-            <h5 class="card-title text-center digit size2">Botón 2</h5>
+            <h5 class="card-title text-center digit size2">Button 2</h5>
             <div class="">
               <span class="badge text-bg-danger">toggle</span>
             </div>
