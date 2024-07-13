@@ -19,6 +19,15 @@
 3. Exec script `init_env.py`, this create file `.env` and create file `src/config.py` for db path
 4. Exec script `start_apps.sh`
 
+## Schematic
+
+![schematic](./src/hardware/assets/board_connection_bb.png)
+
+## Firmware
+
+Install in your board the firmware `firmataStandard` in the Arduino IDE. 
+Or you can download from here with [bootloader](./src/hardware/assets/firmware/StandardFirmata.ino.with_bootloader.hex) or [without bootloader](./src/hardware/assets/firmware/StandardFirmata.ino.hex)
+
 ## Structure
 
 ```bash
@@ -55,8 +64,8 @@
 ## For developer
 
 1. Create a virtual env
-2. Then, need to exec `pip install -e . ` for to install like module
-3. For update all module:
+2. Then, need to exec `pip install -e . ` for to install like module this project
+3. For generate the setup module:
     - Install `pip install setuppy-generator` then exec: ` python -m setuppy_generator > setup.py`
 
 More information [https://pypi.org/project/setuppy-generator/](https://pypi.org/project/setuppy-generator/)
