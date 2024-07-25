@@ -1,7 +1,7 @@
 # Repositorio del curso - CNAD
 
 ## Arquitectura de propuesta de proyecto 
-![arq](assets/Arquitectura_curso_cnad.excalidraw.png)
+![arq](assets/Arquitectura_curso_cnad.png)
 
 ![video](./assets/video.gif)
 
